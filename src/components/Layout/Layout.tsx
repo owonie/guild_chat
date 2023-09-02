@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import { PropsWithChildren } from 'react';
 
 const PageLayout = ({ children }: PropsWithChildren) => {
-  return <PageLayoutWrapper>{children}</PageLayoutWrapper>;
+  return <PageLayoutContainer>{children}</PageLayoutContainer>;
 };
 
-const PageLayoutWrapper = styled.div`
+const PageLayoutContainer = styled.div`
   width: '100%';
   height: '100%';
   display: 'flex';
