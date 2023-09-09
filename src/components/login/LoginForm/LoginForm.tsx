@@ -7,6 +7,7 @@ import {
   InputValueObject,
   LoginRegEx,
 } from './LoginForm.type';
+import axios from 'axios';
 
 const loginRegEx: LoginRegEx = {
   email:
@@ -40,6 +41,19 @@ const LoginForm = () => {
     console.log(inputValueRef.current);
   };
 
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    const inputType = e.currentTarget.id;
+    const inputValue = inputValueRef.current[inputType];
+    axios
+      .post('/signin', { inputValue })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error('Error making post request:', error);
+      });
+  };
+
   return (
     <>
       <PasswordInputForm />
@@ -54,6 +68,7 @@ const LoginForm = () => {
           inputId={'email'}
           validateInputValue={validateInputValue}
           validated={inputErrors['email']}
+          handleSubmit={handleSubmit}
         />
       ) : (
         <InputFormComponent
@@ -61,6 +76,7 @@ const LoginForm = () => {
           inputId={'phone'}
           validateInputValue={validateInputValue}
           validated={inputErrors['phone']}
+          handleSubmit={handleSubmit}
         />
       )}
     </>

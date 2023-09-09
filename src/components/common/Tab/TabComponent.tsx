@@ -10,7 +10,7 @@ const TabComponent = (props: TabComponentProps) => {
   return (
     <div>
       {menuList.map((menu) => (
-        <button onClick={() => setTabState(menu)} key={`${menu}UniqueKey`}>
+        <button onClick={() => setTabState(menu)} key={`${menu}TabUniqueKey`}>
           {menu}
         </button>
       ))}
