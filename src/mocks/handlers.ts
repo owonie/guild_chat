@@ -1,9 +1,11 @@
 import { rest } from 'msw';
 
 export const handlers = [
-  rest.post('/signin', (req, res, ctx) => {
+  rest.post('/signin', async (req, res, ctx) => {
+    const requestBody = await req.json();
     sessionStorage.setItem('is-authenticated', 'true');
-    return res(ctx.status(200));
+    const responseData = { message: 'Sign in successful', data: requestBody };
+    return res(ctx.status(200), ctx.json(responseData));
   }),
 
   rest.post('/signingoogle', (req, res, ctx) => {
