@@ -1,17 +1,17 @@
 import PageLayout from '../../components/common/Layout/Layout';
-import LoginForm from '../../components/login/LoginForm/LoginForm';
+import SigninForm from '../../components/signin/SigninForm/SigninForm';
 
-const LoginPage = () => {
+const SigninPage = () => {
   return (
     <>
       <PageLayout>
         <div>slider section</div>
         <div>
-          <LoginForm />
+          <SigninForm />
         </div>
       </PageLayout>
     </>
   );
 };
 
-export default LoginPage;
+export default SigninPage;

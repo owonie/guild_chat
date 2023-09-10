@@ -6,7 +6,7 @@ import {
   InputErrorsState,
   InputValueObject,
   LoginRegEx,
-} from './LoginForm.type';
+} from './SigninForm.type';
 import axios from 'axios';
 
 const loginRegEx: LoginRegEx = {
@@ -15,7 +15,7 @@ const loginRegEx: LoginRegEx = {
   phone: /^[0-9\b -]{3,13}$/,
 };
 
-const LoginForm = () => {
+const SigninForm = () => {
   const [tabState, setTabState] = useState<string>('emailLogin');
   const [inputErrors, setInputErrors] = useState<InputErrorsState>({
     email: true,
@@ -83,4 +83,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SigninForm;
